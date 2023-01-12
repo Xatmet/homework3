@@ -1,55 +1,53 @@
-﻿//Напишите программу, которая принимает на вход координаты двух точек
-// и находит расстояние между ними в 3D пространстве.
-//A (3,6,8); B (2,1,-7), -> 15.84
-//A (7,-5, 0); B (1,-1,9) -> 11.53
+﻿//Напишите программу, которая задаёт массив из 8 элементов 
+//и выводит их на экран.
+//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+//6, 1, 33 -> [6, 1, 33]
 
-Console.WriteLine("Введите координату Х первой точки: ");
-int X1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Y первой точки: ");
-int Y1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Z первой точки: ");
-int Z1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Х второй точки: ");
-int X2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Y второй точки: ");
-int Y2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите координату Z второй точки: ");
-int Z2 = Convert.ToInt32(Console.ReadLine());
-double result = Math.Sqrt(Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2) + Math.Pow(Z2 - Z1, 2));
-Console.Write(Math.Round(result, 2));
 
-//Напишите программу, которая принимает на вход число (N)
-// и выдаёт таблицу кубов чисел от 1 до N.
-//3 -> 1, 8, 27
-//5 -> 1, 8, 27, 64, 125
 
 Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[num];
-for (int index = 0; index < num; index++)
+int num  = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[8];
+for (int i = 0; i < array.Length; i++)
 {
-    array[index] = (index + 1) * (index + 1) * (index + 1);
-
-    Console.Write($"{array[index]} ");
+array[i] = new Random().Next(0,100);
+    Console.Write($"{array[i]} ");
+  Console.WriteLine();
 }
 
 
-// Напишите программу, которая принимает на вход пятизначное число 
-// и проверяет, является ли оно палиндромом.
-//14212 -> нет
-//12821 -> да
-//23432 -> да
+//Напишите программу, которая принимает на вход число
+//и выдаёт сумму цифр в числе.
+//452 -> 11
+//82 -> 10
+//9012 -> 12
 
-Console.WriteLine("Веедите пятизначное число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[5];
-for (int i = 0; i < 5; i++)
+Console.WriteLine("Введите число: ");
+int i = Convert.ToInt32(Console.ReadLine());
+int sum= 0;
+while (i > 0 )
 {
-    array[i] = num % 10;
-    Console.WriteLine($"{array[i]}");
-    num = num / 10;
+  int num = i % 10;
+i = i / 10;
+sum= sum + num;
 }
-if (array[0] == array[4] && array[1] == array[3])
-    Console.Write("Число является палиндромом");
-else
-    Console.Write("Число Не является палиндромом");
+Console.WriteLine( sum );
+
+
+
+
+//Напишите цикл, который принимает на вход два числа (A и B) 
+//и возводит число A в натуральную степень B.
+//3, 5 -> 243 (3⁵)
+//2, 4 -> 16
+
+Console.WriteLine("Введите число: A ");
+int A = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число: B ");
+int B = Convert.ToInt32(Console.ReadLine());
+int degr = A;
+for (int i = 1; i < B; i++)
+{
+degr = degr * A;
+}
+Console.WriteLine(degr);
